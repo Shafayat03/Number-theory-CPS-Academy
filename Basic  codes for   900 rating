@@ -1,0 +1,31 @@
+//  prime  factorization using ==>  sqrt(N) complexity 
+
+void Prime_asli()
+{
+   ll n;
+   cin >> n;
+
+   vector<ll>prime_factors;
+ll i;
+
+   for(i = 2;i * i<= n; ++i)
+   {
+      while(n % i ==  0){
+      prime_factors.push_back(i);
+      n /= i;
+      }
+   }
+   if(n> 1){ /// special  case for every composite number their  exist  an prime numbers 
+         prime_factors.push_back(n);
+   }
+
+   for(auto i : prime_factors){
+      cout  << i  <<" ";
+   }
+   cout << endl;
+}
+
+
+int32_t main(){
+Prime_asli();
+}
